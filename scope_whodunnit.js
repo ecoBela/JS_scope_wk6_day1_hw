@@ -14,6 +14,10 @@ const verdict = declareMurderer();
 console.log(verdict);
 
 // Output: 'The murderer is Miss Scarlet' 
+//Reason: the declareMurderer function returns a string and includes the value stored 
+// in the scenario object specifically in scenario.murderer - which is Miss Scarlet). 
+// This is all stored in the const variable called verdict when declareMurderer() is called. 
+// Finally, console.log is called with the verdict variable as an argument.
 
 
 // #### Episode 2
@@ -29,9 +33,14 @@ const declareMurderer = function() {
   return `The murderer is ${murderer}.`;
 }
 
-changeMurderer();
+changeMurderer();//Output & reason: there will be an error msg as this function tries to reassign a variable
+//which has been declared using the const keyword.  You can't reassign a const variable.
 const verdict = declareMurderer();
 console.log(verdict);
+//Output: The murderer is Professor Plum.
+//Reason: The function stored at const variable declareMurderer returns a string and
+// the const murderer variable which is set to Professor Plum.  
+
 
 
 // #### Episode 3
@@ -46,6 +55,10 @@ const declareMurderer = function() {
 
 const firstVerdict = declareMurderer();
 console.log('First Verdict: ', firstVerdict);
+//Output: The murderer is Mrs Peacock
+// Reason: the function in declareMurderer succeeds in changing the murderer name because
+//the murderer name is stored in a variable declared using the 'let' keyword - which means 
+//that the variable can be reassigned.
 
 const secondVerdict = `The murderer is ${murderer}.`;
 console.log('Second Verdict: ', secondVerdict);
