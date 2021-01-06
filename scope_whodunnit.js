@@ -82,7 +82,12 @@ const declareAllSuspects = function() {
 
 const suspects = declareAllSuspects();
 console.log(suspects);
+// Output: The suspects are Miss Scarlet, Professor Plum, Colonel Mustard.
+//Reason: 'let' variables can be reassigned which is what happens to suspectThree within declareAllSuspects().
 console.log(`Suspect three is ${suspectThree}.`);
+// Output: Suspect three is Mrs Peacock
+// Reason: This console log cannot access the changed let variable inside the declareAllSuspects function, but
+// can access the variables at the top of this section.
 
 
 //#### Episode 5
@@ -103,8 +108,13 @@ const declareWeapon = function() {
 }
 
 changeWeapon('Revolver');
+//OUtput: should expect the weapon key in the scenario object to successfully update with a new value: Revolver.
+//Reason: this works because the function is not trying to reassign the scenario object variable- it is 
+//only making changes to a value within the object.
 const verdict = declareWeapon();
 console.log(verdict);
+// Output: The weapon is the Revolver.
+//Reason: the scenario object variable is successfully changed by changeWeapon(), and the declareWeapon() can access that object.
 
 
 //#### Episode 6
