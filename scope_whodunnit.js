@@ -60,8 +60,13 @@ console.log('First Verdict: ', firstVerdict);
 //the murderer name is stored in a variable declared using the 'let' keyword - which means 
 //that the variable can be reassigned.
 
-const secondVerdict = `The murderer is ${murderer}.`;
+const secondVerdict = `The murderer is ${murderer}.`;//This variable cannot access the changed variable inside the declareMurderer function.
 console.log('Second Verdict: ', secondVerdict);
+//Output: The murderer is Professor Plum
+//Reason: const secondVerdict references the murderer variable outside the declareMurderer function.
+// const declareMurderer creates a new temporary variable that cannot be accessed from outside that function.
+
+
 
 
 //#### Episode 4
