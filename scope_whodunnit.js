@@ -136,8 +136,12 @@ const declareMurderer = function () {
   return `The murderer is ${murderer}.`;
 }
 
-changeMurderer();
-const verdict = declareMurderer();
+changeMurderer(); //Output: calling plottwist reassigns the murderer variable to "Mrs White"
+
+const verdict = declareMurderer(); 
+//Output: The murderer is Mrs White
+//Reason: declareMurderer()'s return value contains the murderer value; The murderer variable is 
+//reassigned to Mrs White when plottwist() is called within changeMurderer()
 console.log(verdict);
 
 
